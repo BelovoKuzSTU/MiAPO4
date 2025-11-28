@@ -1,0 +1,375 @@
+/* Основные CSS переменные для цветовой схемы */
+:root {
+    --primary: #4361ee;
+    --primary-dark: #3a56d4;
+    --secondary: #7209b7;
+    --accent: #f72585;
+    /* Светлые и темные тона для контраста */
+    --light: #f8f9fa;
+    --dark: #212529;
+    --success: #4cc9f0;
+    --border: #dee2e6;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Сброс стандартных отступов и box-model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Основные стили body - градиентный фон */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    /* Цвет текста и межстрочный интервал */
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+/* Основной контейнер с белым фоном */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Шапка с градиентом и декоративным элементом */
+.header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Декоративный треугольный фон для шапки */
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+    background-size: cover;
+}
+
+/* Заголовок в шапке с тенью текста */
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    position: relative;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Подзаголовок в шапке */
+.header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    position: relative;
+}
+
+/* Область основного контента */
+.content {
+    padding: 30px;
+}
+
+/* Статистическая панель с информацией */
+.stats {
+    background: var(--light);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border-left: 4px solid var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Отдельный элемент статистики */
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+/* Круглая иконка для статистики */
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+/* Панель с кнопками действий */
+.toolbar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+/* Базовая кнопка с иконкой и текстом */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Эффекты при наведении на кнопку */
+.btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Вторичная кнопка другого цвета */
+.btn-secondary {
+    background: var(--secondary);
+}
+
+/* Эффект для вторичной кнопки */
+.btn-secondary:hover {
+    background: #5a08a0;
+}
+
+/* Кнопка для печати специального цвета */
+.btn-print {
+    background: var(--success);
+}
+
+/* Эффект для кнопки печати */
+.btn-print:hover {
+    background: #3ab0d6;
+}
+
+/* Контейнер для таблицы с тенью */
+.table-container {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Основная таблица на всю ширину */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+/* Шапка таблицы с градиентом */
+thead {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+/* Заголовки столбцов таблицы */
+th {
+    padding: 16px;
+    text-align: left;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Ячейки таблицы с отступами */
+td {
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    transition: background-color 0.2s ease;
+}
+
+/* Строки таблицы с анимацией */
+tbody tr {
+    transition: all 0.3s ease;
+}
+
+/* Эффект при наведении на строку */
+tbody tr:hover {
+    background: #f8f9ff;
+    transform: scale(1.01);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Убираем границу у последней строки */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Стили для состояния отсутствия данных */
+.no-data {
+    text-align: center;
+    padding: 60px 20px;
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+
+/* Большая иконка для пустого состояния */
+.no-data .icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+/* Подвал с светлым фоном */
+.footer {
+    background: var(--light);
+    padding: 20px;
+    text-align: center;
+    color: #6c757d;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border);
+}
+
+/* Стили для режима печати/PDF */
+@media print {
+    /* Скрываем непечатаемые элементы */
+    .no-print {
+        display: none !important;
+    }
+    
+    /* Настройки страницы для печати */
+    body {
+        margin: 15mm;
+        font-size: 11pt;
+        font-family: 'Times New Roman', serif;
+        color: #000;
+        background: white !important;
+    }
+    
+    /* Контейнер без ограничений ширины */
+    .container {
+        max-width: none !important;
+    }
+    
+    /* Заголовок по центру для печати */
+    h1 {
+        text-align: center;
+        color: #000 !important;
+        margin-bottom: 20px;
+        font-size: 16pt;
+    }
+    
+    /* Таблица для печати с границами */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+        page-break-inside: auto;
+    }
+    
+    /* Ячейки с черными границами для печати */
+    th, td {
+        border: 1pt solid #000 !important;
+        padding: 8pt;
+        text-align: left;
+        background: white !important;
+        color: #000 !important;
+    }
+    
+    /* Серый фон для заголовков таблицы */
+    th {
+        background-color: #f0f0f0 !important;
+        font-weight: bold;
+    }
+    
+    /* Подвал для печати с отступом */
+    .footer {
+        margin-top: 20mm;
+        text-align: center;
+        font-size: 9pt;
+        color: #666;
+    }
+    
+    /* Запрет разрыва строк при печати */
+    tr {
+        page-break-inside: avoid;
+    }
+}
+
+/* Специальный класс для режима печати */
+body.print-mode {
+    background: white;
+    margin: 15mm;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    /* Уменьшаем отступы на мобильных */
+    body {
+        padding: 10px;
+    }
+    
+    /* Меньшие отступы в шапке */
+    .header {
+        padding: 20px;
+    }
+    
+    /* Уменьшаем размер заголовка */
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    /* Меньшие отступы контента */
+    .content {
+        padding: 20px;
+    }
+    
+    /* Статистика в колонку на мобильных */
+    .stats {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    /* Кнопки в колонку на мобильных */
+    .toolbar {
+        flex-direction: column;
+    }
+    
+    /* Центрируем текст в кнопках */
+    .btn {
+        justify-content: center;
+    }
+    
+    /* Меньшие отступы в таблице */
+    th, td {
+        padding: 12px 8px;
+        font-size: 14px;
+    }
+    
+    /* Прокрутка таблицы на маленьких экранах */
+    .table-container {
+        overflow-x: auto;
+    }
+}
